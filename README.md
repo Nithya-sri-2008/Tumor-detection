@@ -72,11 +72,48 @@ df['diagnosis']=df['diagnosis'].map({'M':1,'B':0})
 df.head()
 ```
 
-### 10.
+### 10.Spliting X and Y from the dataset
+
+here we are going to predict the Tumor using its diagnosis column 
+so,we are droping that column from x and storing it in the y.(i.e) x contains input values and y contain output values
+
 
 ```
 x=df.drop('diagnosis',axis=1)
 y=df['diagnosis']
+```
+
+### 11. Train the dataframe
+
+import  standards scaler and train_test_split from sklearn and fit train and test in the variable
+
+```
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3
+ss=StandardScaler()
+x_train=ss.fit_transform(x_train)
+x_test= ss.fit_transform(x_test)
+```
+
+### 12. Apply Randomforest Classifier
+importing randomforest and accuracyscore. accuracy_score is nothing but the  proportion of correct predictions.
+
+```
+from sklearn.metrics import accuracy_score
+from sklearn.ensemble import RandomForestClassifier
+```
+### 13.Prediction
+
+```
+rfc=RandomForestClassifier()
+rfc.fit(x_train,y_train)
+y_pred=rfc.predict(x_test)
+print(accuracy_score(y_test,y_pred))
+```
+
+### 14.Conclusion
+
 
 
 
