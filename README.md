@@ -90,7 +90,7 @@ import  standards scaler and train_test_split from sklearn and fit train and tes
 ```
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
-x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.3)
 ss=StandardScaler()
 x_train=ss.fit_transform(x_train)
 x_test= ss.fit_transform(x_test)
@@ -103,7 +103,7 @@ importing randomforest and accuracyscore. accuracy_score is nothing but the  pro
 from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier
 ```
-### 13.Prediction
+### 13.Prediction Using Random forest classifier
 
 ```
 rfc=RandomForestClassifier()
@@ -113,7 +113,7 @@ print(accuracy_score(y_test,y_pred))
 ```
 
 ### 14.Conclusion
-
+       Now we can predict the tumor whether it is malignant or begin
 
 
 
